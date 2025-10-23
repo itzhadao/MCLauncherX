@@ -1,7 +1,9 @@
 import os
 import urllib.request
+import zipfile
+import sys
 
-# https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25%2B36/OpenJDK25U-jdk_x64_windows_hotspot_25_36.zip
+from src.platform import detect_platform
 
 launcher_ver = 0
 installed = 0
@@ -33,7 +35,22 @@ def down_lwjgl(type): # type = 1 -> v2.9.3; type = 2 -> v3.3.6
   elif type == 2:
     save_lwjgl_path = r"C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\3.3.6" + "\\"
     down_lwjgl_path = save_lwjgl_path + "lwjgl.zip"
-    urlib.request.urlretrieve()
+    urlib.request.urlretrieve("https://itzhadao.github.io/mclauncherx/lwjgl-3.3.6-mc.zip", down_lwjgl_path)
+    
+    with zipfile.ZipFile(down_lwjgl_path, "r") as zipf:
+      zipf.extractall(save_lwjgl_path)
+    
+    os.remove(down_lwjgl_path)
+
+def download_libraries:
+  platform_inf = detect_platform()
+  if platform_inf == "OSNotFound":
+    print("DEBUG: OS Not Found")
+    sys.exit()
+  elif platform_inf == "ArchNotFound":
+    print("DEBUG: Arch Not Found")
+    sys.exit()
+  elif
 
 if os.path.isfile(launcher_file_path):
     with open(launcher_file_path, "r") as f:
