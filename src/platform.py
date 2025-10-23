@@ -1,7 +1,7 @@
 import platform
 import sys
 
-def detect_flatform():
+def detect_platform():
   system = platform.system().lower()
   machine = platform.machine().lower()
   
