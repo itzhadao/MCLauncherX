@@ -100,6 +100,11 @@ def download_libraries():
     print("DEBUG: Downloaded java versions")
     download_lwjgl()
   elif platform_inf == "linux-s390x":
+    down_jdk_tar("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.16%2B8/OpenJDK17U-jdk_s390x_linux_hotspot_17.0.16_8.tar.gz", 17)
+    down_jdk_tar("https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.9%2B10/OpenJDK21U-jdk_s390x_linux_hotspot_21.0.9_10.tar.gz", 21)
+    jdk_vers = [17, 21]
+    print("DEBUG: Downloaded java versions")
+    download_lwjgl()
     
 if __name__ == "__main__":
   clear()
