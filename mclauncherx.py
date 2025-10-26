@@ -9,7 +9,7 @@ from src.clear import clear
 
 launcher_ver = 0
 
-jdk_vers = []
+jdk_vers = 000 # first digit = jdk8, second = jdk17, third = jdk21
 
 launcher_file_path = r"C:\Users\Admin\AppData\Roaming\.minecraft\launcher\mclauncherx.dat"
 
@@ -76,33 +76,39 @@ def download_libraries():
     down_jdk_tar("https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u462-b08/OpenJDK8U-jdk_aarch64_linux_hotspot_8u462b08.tar.gz", 8)
     down_jdk_tar("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.16%2B8/OpenJDK17U-jdk_aarch64_linux_hotspot_17.0.16_8.tar.gz", 17)
     down_jdk_tar("https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.8%2B9/OpenJDK21U-jdk_aarch64_linux_hotspot_21.0.8_9.tar.gz", 21)
-    jdk_vers = [8, 17, 21]
+    jdk_vers = 111
     print("DEBUG: Downloaded java versions")
     download_lwjgl()
   elif platform_inf == "linux-arm":
     down_jdk_tar("https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u462-b08/OpenJDK8U-jdk_arm_linux_hotspot_8u462b08.tar.gz", 8)
     down_jdk_tar("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.16%2B8/OpenJDK17U-jdk_arm_linux_hotspot_17.0.16_8.tar.gz", 17)
-    jdk_vers = [8, 17]
+    jdk_vers = 110
     print("DEBUG: Downloaded java versions")
     download_lwjgl()
   elif platform_inf == "linux-ppc64le":
     down_jdk_tar("https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u462-b08/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u462b08.tar.gz", 8)
     down_jdk_tar("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.16%2B8/OpenJDK17U-jdk_ppc64le_linux_hotspot_17.0.16_8.tar.gz", 17)
     down_jdk_tar("https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.8%2B9/OpenJDK21U-jdk_ppc64le_linux_hotspot_21.0.8_9.tar.gz", 21)
-    jdk_vers = [8, 17, 21]
+    jdk_vers = 111
     print("DEBUG: Downloaded java versions")
     download_lwjgl()
   elif platform_inf == "linux-x64":
     down_jdk_tar("https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u462-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u462b08.tar.gz", 8)
     down_jdk_tar("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.17%2B10/OpenJDK17U-jdk_x64_linux_hotspot_17.0.17_10.tar.gz", 17)
     down_jdk_tar("https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.9%2B10/OpenJDK21U-jdk_x64_linux_hotspot_21.0.9_10.tar.gz", 21)
-    jdk_vers = [8, 17, 21]
+    jdk_vers = 111
     print("DEBUG: Downloaded java versions")
     download_lwjgl()
   elif platform_inf == "linux-s390x":
     down_jdk_tar("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.16%2B8/OpenJDK17U-jdk_s390x_linux_hotspot_17.0.16_8.tar.gz", 17)
     down_jdk_tar("https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.9%2B10/OpenJDK21U-jdk_s390x_linux_hotspot_21.0.9_10.tar.gz", 21)
-    jdk_vers = [17, 21]
+    jdk_vers = 011
+    print("DEBUG: Downloaded java versions")
+    download_lwjgl()
+  elif platform_ìn == "linux-riscv64":
+    down_jdk_tar("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.16%2B8/OpenJDK17U-jdk_riscv64_linux_hotspot_17.0.16_8.tar.gz", 17)
+    down_jdk_tar("https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.8%2B9/OpenJDK21U-jdk_riscv64_linux_hotspot_21.0.8_9.tar.gz", 21)
+    jdk_vers = 011
     print("DEBUG: Downloaded java versions")
     download_lwjgl()
     
