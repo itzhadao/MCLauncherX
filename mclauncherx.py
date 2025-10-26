@@ -61,7 +61,7 @@ def download_lwjgl():
   down_lwjgl(2)
   print("DEBUG: Downloaded LWJGL versions")
 
-def download_libraries:
+def download_libraries():
   global jdk_vers
   platform_inf = detect_platform()
   if platform_inf == "OSNotFound":
@@ -77,14 +77,28 @@ def download_libraries:
     jdk_vers = [8, 17, 21]
     print("DEBUG: Downloaded java versions")
     download_lwjgl()
+  elif platform_inf == "linux-arm":
+    down_jdk_tar("https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u462-b08/OpenJDK8U-jdk_arm_linux_hotspot_8u462b08.tar.gz", 8)
+    down_jdk_tar("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.16%2B8/OpenJDK17U-jdk_arm_linux_hotspot_17.0.16_8.tar.gz", 17)
+    jdk_vers = [8, 17]
+    print("DEBUG: Downloaded java versions")
+    download_lwjgl()
+  elif platform_inf == "linux-ppc64le":
+    down_jdk_tar("https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u462-b08/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u462b08.tar.gz", 8)
+    down_jdk_tar("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.16%2B8/OpenJDK17U-jdk_ppc64le_linux_hotspot_17.0.16_8.tar.gz", 17)
+    down_jdk_tar("https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.8%2B9/OpenJDK21U-jdk_ppc64le_linux_hotspot_21.0.8_9.tar.gz", 21)
+    jdk_vers = [8, 17, 21]
+    print("DEBUG: Downloaded java versions")
+    download_lwjgl()
 
 if os.path.isfile(launcher_file_path):
     with open(launcher_file_path, "r") as f:
       content = f.read()
       launcher_ver = content[0:6]
+      download_libraries()
 else:
   with open(launcher_file_path, "x") as f:
-    file.write("000100") # version a1.0.0
+    file.write("001000") # version a1.0.0
   print("DEBUG: Created mclauncherx.dat")
   
   
