@@ -1,6 +1,7 @@
 import os
 import urllib.request
 import zipfile
+import tarfile
 import sys
 
 from src.platform import detect_platform
@@ -90,6 +91,15 @@ def download_libraries():
     jdk_vers = [8, 17, 21]
     print("DEBUG: Downloaded java versions")
     download_lwjgl()
+  elif platform_inf == "linux-x64":
+    down_jdk_tar("https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u462-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u462b08.tar.gz", 8)
+    down_jdk_tar("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.17%2B10/OpenJDK17U-jdk_x64_linux_hotspot_17.0.17_10.tar.gz", 17)
+    down_jdk_tar("https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.9%2B10/OpenJDK21U-jdk_x64_linux_hotspot_21.0.9_10.tar.gz", 21)
+    jdk_vers = [8, 17, 21]
+    print("DEBUG: Downloaded java versions")
+    download_lwjgl()
+  elif platform_inf == "linux-s390x":
+    
 
 if os.path.isfile(launcher_file_path):
     with open(launcher_file_path, "r") as f:
