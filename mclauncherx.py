@@ -5,6 +5,7 @@ import tarfile
 import sys
 
 from src.platform import detect_platform
+from src.clear import clear
 
 launcher_ver = 0
 
@@ -100,15 +101,14 @@ def download_libraries():
     download_lwjgl()
   elif platform_inf == "linux-s390x":
     
-
-if os.path.isfile(launcher_file_path):
+if __name__ == "__main__":
+  clear()
+  if os.path.isfile(launcher_file_path):
     with open(launcher_file_path, "r") as f:
       content = f.read()
       launcher_ver = content[0:6]
       download_libraries()
-else:
-  with open(launcher_file_path, "x") as f:
-    file.write("001000") # version a1.0.0
-  print("DEBUG: Created mclauncherx.dat")
-  
-  
+  else:
+    with open(launcher_file_path, "x") as f:
+      file.write("001000") # version a1.0.0
+    print("DEBUG: Created mclauncherx.dat")
