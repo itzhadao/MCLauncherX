@@ -111,7 +111,25 @@ def download_libraries():
     jdk_vers = 011
     print("DEBUG: Downloaded java versions")
     download_lwjgl()
-    
+  elif platform_inf == "windows-x64":
+    down_java("https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u462-b08/OpenJDK8U-jdk_x64_windows_hotspot_8u462b08.zip", 8)
+    down_java("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.16%2B8/OpenJDK17U-jdk_x64_windows_hotspot_17.0.16_8.zip", 17)
+    down_java("https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.8%2B9/OpenJDK21U-jdk_x64_windows_hotspot_21.0.8_9.zip", 21)
+    jdk_vers = 111
+    print("DEBUG: Downloaded java versions")
+    download_lwjgl()
+  elif platform_inf == "windows-x32":
+   down_java("https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u462-b08/OpenJDK8U-jdk_x86-32_windows_hotspot_8u462b08.zip", 8)
+   down_java("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.16%2B8/OpenJDK17U-jdk_x86-32_windows_hotspot_17.0.16_8.zip", 17)
+   jdk_vers = 110
+   print("DEBUG: Downloaded java versions")
+   download_lwjgl() 
+  elif platform_inf == "windows-aarch64":
+    down_java("https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.8%2B9/OpenJDK21U-jdk_aarch64_windows_hotspot_21.0.8_9.zip", 21)
+    jdk_vers = 001
+    print("DEBUG: Downloaded java 21")
+    download_lwjgl()
+
 if __name__ == "__main__":
   clear()
   if os.path.isfile(launcher_file_path):
