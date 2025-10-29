@@ -149,6 +149,16 @@ def download_libraries():
     jdk_vers = 111
     print("DEBUG: Downloaded java versions")
     download_lwjgl()
+  elif platform_inf == "solaris-sparcv9":
+    down_jdk_tar("https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u462-b08/OpenJDK8U-jdk_sparcv9_solaris_hotspot_8u462b08.tar.gz", 8)
+    jdk_vers= 100
+    print("DEBUG: Downloaded java 8")
+    download_lwjgl()
+  elif platform_inf == "solaris-x64":
+    down_jdk_tar("https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u462-b08/OpenJDK8U-jdk_x64_solaris_hotspot_8u462b08.tar.gz", 8)
+    jdk_vers = 100
+    print("DEBUG: Downloaded java 8")
+    download_lwjgl()
 
 if __name__ == "__main__":
   clear()
