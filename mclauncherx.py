@@ -129,6 +129,19 @@ def download_libraries():
     jdk_vers = 001
     print("DEBUG: Downloaded java 21")
     download_lwjgl()
+  elif platform_inf == "mac-x64":
+    down_jdk_tar("https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u462-b08/OpenJDK8U-jdk_x64_mac_hotspot_8u462b08.tar.gz", 8)
+    down_jdk_tar("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.16%2B8/OpenJDK17U-jdk_x64_mac_hotspot_17.0.16_8.tar.gz", 17)
+    down_jdk_tar("https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.8%2B9/OpenJDK21U-jdk_x64_mac_hotspot_21.0.8_9.tar.gz", 21)
+    jdk_vers = 111
+    print("DEBUG: Downloaded java versions")
+    download_lwjgl()
+  elif platform_inf == "mac-aarch64":
+    down_jdk_tar("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.17%2B10/OpenJDK17U-jdk_aarch64_mac_hotspot_17.0.17_10.tar.gz", 17)
+    down_jdk_tar("https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.9%2B10/OpenJDK21U-jdk_aarch64_mac_hotspot_21.0.9_10.tar.gz", 21)
+    jdk_vers = 011
+    print("DEBUG: Downloaded java versions")
+    download_lwjgl()
 
 if __name__ == "__main__":
   clear()
