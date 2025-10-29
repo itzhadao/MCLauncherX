@@ -6,6 +6,7 @@ import sys
 
 from src.platform import detect_platform
 from src.clear import clear
+from src.main import main
 
 launcher_ver = 0
 
@@ -166,8 +167,9 @@ if __name__ == "__main__":
     with open(launcher_file_path, "r") as f:
       content = f.read()
       launcher_ver = content[0:6]
-      download_libraries()
   else:
     with open(launcher_file_path, "x") as f:
       file.write("001000") # version a1.0.0
     print("DEBUG: Created mclauncherx.dat")
+    download_libraries()
+  main(jdk_vers)
