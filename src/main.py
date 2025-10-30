@@ -22,6 +22,16 @@ def run_mc(ver):
     if not file_exists(r"C:\Users\Admin\AppData\Roaming\.minecraft\versions\rd-132328\rd-132328-launcher.jar"):
       down_mc("https://piston-data.mojang.com/v1/objects/12dace5a458617d3f90337a7ebde86c0593a6899/client.jar", "rd-132328", "rd-132328-launcher.jar")
     os.system(r'C:\Users\Admin\AppData\Roaming\.minecraft\launcher\java\8\bin\java.exe -cp -Djava.library.path="C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\native\windows\" "C:\Users\Admin\AppData\Roaming\.minecraft\versions\rd-132328\rd-132328-launcher.jar;C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\jar\lwjgl.jar;C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\jar\jinput.jar;C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\jar\lwjgl_util.jar" com.mojang.rubydung.RubyDung MCLauncherX')
+  elif ver == "rd-160052":
+    if not file_exitsts(r"C:\Users\Admin\AppData\Roaming\.minecraft\versions\rd-160052\rd-160052-launcher.jar"):
+      down_mc("https://piston-data.mojang.com/v1/objects/b100be8097195b6c9112046dc6a80d326c8df839/client.jar", "rd-160052", "rd-160052-launcher.jar")
+    os.system(r'C:\Users\Admin\AppData\Roaming\.minecraft\launcher\java\8\bin\java.exe -cp -Djava.library.path="C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\native\windows\" "C:\Users\Admin\AppData\Roaming\.minecraft\versions\rd-160052\rd-160052-launcher.jar;C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\jar\lwjgl.jar;C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\jar\jinput.jar;C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\jar\lwjgl_util.jar" com.mojang.rubydung.RubyDung MCLauncherX')
+  elif ver == "rd-161348":
+    if not file_exitsts(r"C:\Users\Admin\AppData\Roaming\.minecraft\versions\rd-161348\rd-161348-launcher.jar"):
+      down_mc("https://piston-data.mojang.com/v1/objects/6323bd14ed7f83852e17ebc8ec418e55c97ddfe4/client.jar", "rd-160052", "rd-160052-launcher.jar")
+    os.system(r'C:\Users\Admin\AppData\Roaming\.minecraft\launcher\java\8\bin\java.exe -cp -Djava.library.path="C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\native\windows\" "C:\Users\Admin\AppData\Roaming\.minecraft\versions\rd-161348\rd-161348-launcher.jar;C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\jar\lwjgl.jar;C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\jar\jinput.jar;C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\jar\lwjgl_util.jar" com.mojang.minecraft.RubyDung MCLauncherX')
+  else:
+    print("ERROR: Minecraft version not found or not in this launcher version")
 
 def main(jdk_vers):
   clear()
