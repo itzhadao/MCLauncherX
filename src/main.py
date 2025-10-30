@@ -17,7 +17,11 @@ def run_mc(ver):
   if ver == "rd-132211":
     if not file_exists(r"C:\Users\Admin\AppData\Roaming\.minecraft\versions\rd-132211\rd-132211-launcher.jar"):
       down_mc("https://piston-data.mojang.com/v1/objects/393e8d4b4d708587e2accd7c5221db65365e1075/client.jar", "rd-132211", "rd-132211-launcher.jar")
-    os.system(r'C:\Users\Admin\AppData\Roaming\.minecraft\launcher\java\8\bin\java.exe -cp ""')
+    os.system(r'C:\Users\Admin\AppData\Roaming\.minecraft\launcher\java\8\bin\java.exe -cp -Djava.library.path="C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\native\windows\" "C:\Users\Admin\AppData\Roaming\.minecraft\versions\rd-132211\rd-132211-launcher.jar;C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\jar\lwjgl.jar;C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\jar\jinput.jar;C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\jar\lwjgl_util.jar" com.mojang.rubydung.RubyDung MCLauncherX')
+  elif ver == "rd-132328":
+    if not file_exists(r"C:\Users\Admin\AppData\Roaming\.minecraft\versions\rd-132328\rd-132328-launcher.jar"):
+      down_mc("https://piston-data.mojang.com/v1/objects/12dace5a458617d3f90337a7ebde86c0593a6899/client.jar", "rd-132328", "rd-132328-launcher.jar")
+    os.system(r'C:\Users\Admin\AppData\Roaming\.minecraft\launcher\java\8\bin\java.exe -cp -Djava.library.path="C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\native\windows\" "C:\Users\Admin\AppData\Roaming\.minecraft\versions\rd-132328\rd-132328-launcher.jar;C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\jar\lwjgl.jar;C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\jar\jinput.jar;C:\Users\Admin\AppData\Roaming\.minecraft\launcher\lwjgl\2.9.3\jar\lwjgl_util.jar" com.mojang.rubydung.RubyDung MCLauncherX')
 
 def main(jdk_vers):
   clear()
