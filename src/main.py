@@ -1,6 +1,22 @@
 import keyboard
+import os
 
 from clear import clear
+
+def down_mc(link, ver, jarf_name):
+  save = r"C:\Users\Admin\AppData\Roaming\.minecraft\versions" + "\\"
+  save += ver + "\\"
+  save += jarf_name + ".jar"
+  
+
+def file_exists(path):
+  return os.path.exists(path)
+
+def run_mc(ver):
+  if ver == "rd-132211":
+    if not file_exists(r"C:\Users\Admin\AppData\Roaming\.minecraft\versions\rd-132211\rd-132211-launcher.jar"):
+      
+    os.system(r'C:\Users\Admin\AppData\Roaming\.minecraft\launcher\java\bin\java.exe -cp ""')
 
 def main(jdk_vers):
   clear()
@@ -16,10 +32,20 @@ def main(jdk_vers):
   
   current_slot = 0
   running = True
+  choices = ["rd-132211", "rd-132328", "rd-160052", "rd-161348"]
+  length = len(choices)
   while running:
+    for i in range(length):
+      if current_slot == i:
+        print(">" + choices[current_slot] + "<")
+      else:
+        print(choices[current_slot])
+    clear()
     if keyboard.is_pressed('up'):
       current_slot -= 1
-      current_slot = current_slot%4
+      current_slot = current_slot%length
     if keyboard.is_pressed('down'):
       current_slot += 1
-      current_slot = current_slot%4
+      current_slot = current_slot%length
+    if keyboard.is_pressed('enter'):
+      run_mc(choices[current_slot])
